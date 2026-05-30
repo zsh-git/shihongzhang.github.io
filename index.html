@@ -4,268 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shihong Zhang | Academic Homepage</title>
-  <style>
-    .avatar-photo {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 24px;
-  border: 1px solid #bfdbfe;
-  display: block;
-}
-    :root {
-      --bg: #f7f8fb;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --line: #e5e7eb;
-      --accent: #1d4ed8;
-      --accent-soft: #dbeafe;
-      --maxw: 980px;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-      --radius: 18px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      width: min(var(--maxw), calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(247, 248, 251, 0.9);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 0;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      font-weight: 700;
-      letter-spacing: 0.2px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      font-size: 0.95rem;
-    }
-
-    .hero {
-      padding: 56px 0 28px;
-    }
-
-    .hero-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      padding: 36px;
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .avatar {
-      width: 160px;
-      height: 160px;
-      border-radius: 24px;
-      background: linear-gradient(135deg, var(--accent-soft), #eff6ff);
-      display: grid;
-      place-items: center;
-      color: var(--accent);
-      font-size: 2.3rem;
-      font-weight: 700;
-      border: 1px solid #bfdbfe;
-    }
-
-    .hero h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      line-height: 1.15;
-    }
-
-    .subtitle {
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-
-    .badge-row {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin: 18px 0 0;
-    }
-
-    .badge {
-      background: var(--accent-soft);
-      color: var(--accent);
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      border: 1px solid #bfdbfe;
-    }
-
-    .section {
-      padding: 18px 0;
-    }
-
-    .section-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 28px;
-    }
-
-    .section h2 {
-      margin: 0 0 16px;
-      font-size: 1.45rem;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 22px;
-    }
-
-    .list {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    .paper-list,
-    .teaching-list,
-    .service-list {
-      display: grid;
-      gap: 16px;
-    }
-
-    .item {
-      padding: 16px 18px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: #fff;
-    }
-
-    .item-title {
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .item-meta {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 8px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .contact-box {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 16px 18px;
-      background: #fff;
-    }
-
-    footer {
-      padding: 24px 0 40px;
-      color: var(--muted);
-      font-size: 0.92rem;
-      text-align: center;
-    }
-
-    .note {
-      margin-top: 18px;
-      padding: 14px 16px;
-      border-radius: 14px;
-      background: #f9fafb;
-      border: 1px dashed #cbd5e1;
-      color: #475569;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 780px) {
-      .hero-card,
-      .two-col,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .avatar {
-        width: 110px;
-        height: 110px;
-        border-radius: 18px;
-        font-size: 1.6rem;
-      }
-
-      .hero-card {
-        padding: 24px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <!--
-    使用说明：
-    1. 直接替换下面各部分的文字即可。
-    2. 想加新论文/教学经历，复制一个 .item 块。
-    3. 想改颜色，修改 :root 里的 --accent 等变量。
-    4. 想换成英文主页，直接把中文说明改成英文即可。
-  -->
 
+<body>
   <header class="topbar">
     <div class="container nav">
-      <div class="brand">Shihong Zhang</div>
+      <div class="brand"><a href="index.html">Shihong Zhang</a></div>
       <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#research">Education</a>
-        <a href="#publications">Publications</a>
-        <a href="#teaching">Honor and Award</a>
-        <a href="#contact">Academic Service</a>
+        <a href="about.html">About</a>
+        <a href="education.html">Education</a>
+        <a href="publications.html">Publications</a>
+        <a href="honors.html">Honor and Award</a>
+        <a href="service.html">Academic Service</a>
       </nav>
     </div>
   </header>
@@ -275,18 +26,23 @@
       <div class="container">
         <div class="hero-card">
           <img src="shihongzhang.jpg" alt="Shihong Zhang" class="avatar-photo" />
+
           <div>
             <h1>Shihong Zhang</h1>
+
             <p class="subtitle">
-              PhD in Pure Mathematics<br />
-              <!-- 这里改成你的学校 / 单位 / 身份 -->
-            Postdoctor in  Yau Mathematical Sciences Center , Tsinghua university
+              Ph.D. in Pure Mathematics<br />
+              Postdoctor in Yau Mathematical Sciences Center, Tsinghua University
             </p>
+
             <p>
-              <!-- 这里写一句简洁的自我介绍 -->
-              I work in conformal geometry and related partial diffierential equations. My current research focuses on conformal boundary operators, geometric inequalities and high order elliptic equations.
+              I work in conformal geometry and related partial differential equations.
+              My current research focuses on conformal boundary operators,
+              geometric inequalities and high order elliptic equations.
+            </p>
+
             <div class="badge-row">
-              <span class="badge">Partical Differential Equations</span>
+              <span class="badge">Partial Differential Equations</span>
               <span class="badge">Geometric Analysis</span>
               <span class="badge">Conformal Geometry</span>
             </div>
@@ -294,152 +50,6 @@
         </div>
       </div>
     </section>
-
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-card">
-          <h2>About</h2>
-          <div class="two-col">
-            <div>
-              <p>
-                <!-- 在这里写详细一点的个人简介 -->
-                Welcome to my academic homepage. My name is Shihong Zhang. I was born in 1995 in Shangrao, Jiangxi Province, China. I am currently a postdoctoral researcher at the Yau Mathematical Sciences Center of Tsinghua University.
-              </p>
-            </div>
-            <div>
-              <ul class="list">
-                <li><strong>Research interests:</strong> conformal geometry, elliptic PDEs, geometric inequalities</li>
-                <li><strong>Email:</strong> zhangshihong9@163.com</li>
-                <li><strong>Office:</strong> Shuangqing Complex Bldg. C656</li>
-                <li><strong>CV:</strong> <a href="CV.pdf">CV</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="research" class="section">
-      <div class="container">
-        <div class="section-card">
-          <h2>Education</h2>
-          <ul class="list">
-            <li>2014-09-01 to 2018-07-01 | Bachelor, Northwestern Polytechnical University</li>
-            <li>2018-09-01 to 2021-07-01 | Master,Nanjing University</li>
-            <li>2021-09-01 to 2025-07-01 | Phd,Nanjing University</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="publications" class="section">
-      <div class="container">
-        <div class="section-card">
-          <h2>Publications & Preprints</h2>
-          <div class="paper-list">
-            <article class="item">
-              <div class="item-title">1. A Liouville-Type Theorem of the Linearly Perturbed Paneitz Equation on $\S^3$</div>
-              <div class="item-meta">Shihong Zhang, <strong>International Mathematics Research Notices (IMRN)</strong>, 2023. <a href="https://doi.org/10.1093/imrn/rnab303">[Link]</a></div>
-              
-            </article>
-
-            <article class="item">
-              <div class="item-title">2. On some rigidity theorems of Q-curvature</div>
-              <div class="item-meta">Yiyan Xu and Shihong Zhang, <strong>manuscripta mathematica</strong>, 2024.<a href="https://doi.org/10.1007/s00229-023-01506-2">[Link]</a></div>
-              
-            </article>
-
-
-  <article class="item">
-              <div class="item-title">3. The sharp type Chern-Gauss-Bonnet integral and asymptotic behavior</div>
-              <div class="item-meta">Shihong Zhang, <strong>Advances in Mathematics </strong>, 2024.<a href="https://doi.org/10.1016/j.aim.2024.109761">[Link]</a> </div>
-             
-            </article>
-
-
-
-<article class="item">
-              <div class="item-title">4. The Non-degenerate Condition for Prescribed Q Curvature Problem on $$\mathbb {S}^n$$</div>
-              <div class="item-meta">Shihong Zhang, <strong>Results in Mathematics</strong>, 2024.<a href="https://doi.org/10.1007/s00025-024-02216-1">[Link]</a></div>
-            
-            </article>
-
-
-
-<article class="item">
-              <div class="item-title">5. The moving plane method and the uniqueness of high-order elliptic equation with GJMS operator</div>
-              <div class="item-meta">Shihong Zhang, <strong>Proceedings of the Royal Society of Edinburgh: Section A Mathematics</strong>, 2025.<a href="https://doi.org/10.1017/prm.2025.10011">[Link]</a></div>
-            </article>
-
-
-<article class="item">
-              <div class="item-title">6. Constrained Moser-Trudinger-Onofri inequality and a uniqueness criterion for the mean field equation</div>
-              <div class="item-meta"> Xuezhang Chen and Shihong Zhang, <strong>Calculus of Variations and Partial Differential Equations</strong>, 2025.<a href="https://doi.org/10.1007/s00526-025-03095-2">[Link]</a></div>
-             
-            </article>
-
-<article class="item">
-              <div class="item-title">7. A sharp Sobolev trace inequality of order four on three-balls</div>
-              <div class="item-meta"> Xuezhang Chen and Shihong Zhang, <strong>Journal d'Analyse Mathématique</strong>, 2026.<a href="https://doi.org/10.1007/s11854-026-0442-3">[Link]</a></div>
-             
-            </article>            
-
-<article class="item">
-              <div class="item-title">8. The Poisson kernels for conformal boundary operators associated to the triharmonic equation and its applications</div>
-              <div class="item-meta"> Shihong Zhang, <strong>Calculus of Variations and Partial Differential Equations</strong>, 2026.<a href="https://doi.org/10.1007/s00526-025-03224-x">[Link]</a> </div>
-  
-            </article>
-
-<article class="item">
-              <div class="item-title">9. A simple proof of reverse Sobolev inequalities on the sphere and Sobolev trace inequalities on the unit ball</div>
-              <div class="item-meta"> Runmin Gong; Qiaohua Yang and Shihong Zhang, <strong>Journal of Functional Analysis</strong>, 2026. <a href="https://doi.org/10.1016/j.jfa.2026.111380">[Link]</a></div>
-             
-            </article>
-            
-
-            <!--
-              复制上面的 article.item 块，可以继续加论文。
-            -->
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="Honor and Award "class="section">
-      <div class="container">
-        <div class="section-card">
-          <h2>Honor and Award</h2>
-          <div class="teaching-list">
-            <div class="item">
-              <div class="item-title">Postdoctoral Innovative Talent Program, Grade A/ 2025</div>
-              
-              
-              
-            </div>
- <div class="item">
-<div class="item-title">Shuimu Tsinghua Scholar, Tsinghua University / 2025
-</div> 
-   </div> 
-    <div class="item">
- <div class="item-title">Jiangsu Province Outstanding Doctoral Thesis Award / 2025</div> 
- </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-card">
-          <h2>Academic Service</h2>
-          <div class="service-list">
-            <div class="item">
-              <div class="item-title">Reviewer</div>
-              <div class="item-meta">Mathematical Reviews</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
   </main>
 
   <footer>
